@@ -21,10 +21,11 @@ jobs:
           path: test-results
 
   run_snyk_scan:
-    - snyk/scan:
-        fail-on-issues: false
-        monitor-on-build: true
-        severity-threshold: high
+    steps:
+      - snyk/scan:
+          fail-on-issues: false
+          monitor-on-build: true
+          severity-threshold: high
 
   build_docker_image:
     docker:
